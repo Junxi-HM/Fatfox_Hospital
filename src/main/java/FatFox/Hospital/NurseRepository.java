@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface NurseRepository extends CrudRepository<Nurse, Long> {
 	Nurse findByNameIgnoreCase(String name);
+	
+	Nurse findByUserIgnoreCase(String user);
 
 	boolean existsByUserAndPassword(String user, String password);
 }

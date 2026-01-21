@@ -18,7 +18,7 @@ public class Nurse {
 	private String user;
 	private String password;
 	@Lob
-	private byte[] profileRes;
+	private byte[] profile;
 
 	public Long getId() {
 		return id;
@@ -68,11 +68,11 @@ public class Nurse {
 		this.email = email;
 	}
 
-	public byte[] getProfileRes() {
-		return profileRes;
+	public byte[] getProfile() {
+		return profile;
 	}
 
-	public void setProfileResId(byte[] profileResId) {
-		this.profileRes = profileResId;
+	public void setProfile(byte[] profileResId) {
+		this.profile = profileResId;
 	}
 }

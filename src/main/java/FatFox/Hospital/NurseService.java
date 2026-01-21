@@ -53,6 +53,16 @@ public class NurseService {
 		Nurse nurse = nurseRepository.findByNameIgnoreCase(lowerName);
 		return nurse; // Returns null if no match is found
 	}
+	
+	// GET BY USERNAME
+	public Nurse searchByUser(String username) {
+		if (username == null || username.isEmpty()) {
+			return null; // Returns null if name is null or empty
+		}
+		String lowerName = username.toLowerCase();
+		Nurse nurse = nurseRepository.findByUserIgnoreCase(lowerName);
+		return nurse; // Returns null if no match is found
+	}
 
 	// LOGIN
 	public boolean login(String user, String password) {

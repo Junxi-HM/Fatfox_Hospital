@@ -1,4 +1,4 @@
-package FatFox.Hospital;
+	package FatFox.Hospital;
 
 import java.util.Optional;
 
@@ -73,6 +73,16 @@ public class NurseController {
 	@GetMapping("/name/{name}")
 	public ResponseEntity<Nurse> searchNurses(@PathVariable String name) {
 		Nurse nurse = nurseService.searchByName(name);
+		if (nurse == null) {
+			return ResponseEntity.notFound().build();
+		}
+		return ResponseEntity.ok(nurse);
+	}
+	
+	// GET BY USERNAME
+	@GetMapping("/user/{user}")
+	public ResponseEntity<Nurse> searchUser(@PathVariable String user) {
+		Nurse nurse = nurseService.searchByUser(user);
 		if (nurse == null) {
 			return ResponseEntity.notFound().build();
 		}
