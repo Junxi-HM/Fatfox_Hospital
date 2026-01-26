@@ -30,6 +30,7 @@ public class NurseService {
 			nurse.setSurname(nurseData.getSurname());
 			nurse.setUser(nurseData.getUser());
 			nurse.setPassword(nurseData.getPassword());
+			nurse.setEmail(nurseData.getEmail());			
 			return nurseRepository.save(nurse);
 		}
 		return null;
